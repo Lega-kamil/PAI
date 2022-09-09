@@ -8,7 +8,7 @@
             }
         }
 		
-function form() {
+function sprawdzam() {
   
   let x = document.getElementById("numb").value;
   

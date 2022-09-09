@@ -48,4 +48,8 @@ li a:hover:not(.active) {
 
 .active {
   background-color: white;
+}
 
+ol {
+	color:white;
+}
