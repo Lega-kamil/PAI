@@ -6,21 +6,21 @@
     </head>
     <body>
 
-    <form action="./index.php" method="POST">
+    <form action="./1stPage.php" method="POST">
     <p>LOGIN:<input type="text" name="imie" placeholder="LOGIN"/></p><br>
 
     <p>HASLO:<input type="password" name="haslo" placeholder="PASSWORD"/></p><br>
 
-    <p><textarea name="kom" placeholder="komentarz!">Wpisz Komentarz!</textarea></p><br>
+    <p><textarea name="kom" placeholder="Wpisz komentarz!"></textarea></p><br>
 
     <p><input type="checkbox" name="cos" />Zapamietaj mnie</p>
 
-    <p>Plec:</p>
-        <p><input type="radio" name="plec" value="m" />Mezczyzna</p>
+    <p>Płeć:</p>
+        <p><input type="radio" name="plec" value="m" />Mężczyzna</p>
         <p><input type="radio" name="plec" value="k" />Kobieta</p>
         <p><input type="radio" name="plec" value="i" />Inna</p>
 
-        <select name="kolor">
+        <select name="kolor" >
         <option value="czerwony">Czerwony</option>
         <option value="zielony">Zielony</option>
         <option value="niebieski">Niebieski</option>
@@ -56,7 +56,7 @@
         }
 
         if(isset($_POST['kom'])){
-            echo "Komentarz w pełni tekstowy: " . htmlspecialchars($_POST['kom'])."<br />";
+            echo "Komentarz w pelni tekstowy: " . htmlspecialchars($_POST['kom'])."<br />";
         }
 
         if(isset($_POST['kom'])){
@@ -65,21 +65,29 @@
 
         if(isset($_POST['plec'])){
             if($_POST['plec'] == "m") 
-            echo "Wybrana płeć: Mężczyzna"."<br />";
+            echo "Wybrana plec: Mezczyzna"."<br />";
            
-        }elseif($_POST['plec'] == "k"){
-            echo "Wybrana płeć: Kobieta"."<br />";
-        }else{
-            echo "wybrana płeć: inna"."<br />";
+             elseif($_POST['plec'] == "k"){
+            echo "Wybrana plec: Kobieta"."<br />";
+        }    else{
+            echo "wybrana plec: inna"."<br />";
         }
+    }
 
         if(isset($_POST['gry'])){
             for($i=0; $i<count($_POST['gry']); $i++){
                 echo $_POST['gry'][$i] . "<br />";
             }
         }else{
-            echo "Nie wybrano ani jednej serii gier :(";
+            echo "Nie wybrano ani jednej serii gier :(" . "<br />";
         }
+        
+        if(isset($_POST['kolor'])){
+            {
+                echo "wybrany kolor to: " . $_POST['kolor'] . "<br />";
+            }
+        }
+
         ?>
     </body>
 </html>
