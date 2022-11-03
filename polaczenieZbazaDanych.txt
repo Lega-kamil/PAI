@@ -1,0 +1,39 @@
+<?php
+$hostname = 'localhost'; // Nazwa hosta
+$database = 'Login'; // Nazwa bazy danych
+$username = 'root'; // Nazwa uztytkownika
+$password = ''; // Haslo
+
+$conn = new mysqli($hostname, $username, $password, $database);
+?>
+
+<html>
+ <head>
+    <title>Login Page</title>
+    <meta charset="utf-8">
+ </head>
+ <body>
+    <form action="./connBaza.php" method="POST">
+        <p>LOGIN:<input type="text" name="imie" placeholder="LOGIN"/></p><br>
+        <p>HASLO:<input type="password" name="haslo" placeholder="PASSWORD"/></p><br>
+        <input type="checkbox" name="zapis" value="yes"/>
+        <input type="submit" name="wyslij" />
+    </form>
+ </body>
+</html>
+
+<?php
+    if(!isset($_POST['wyslij'])){
+        exit(0);
+    }
+
+if(($_POST['zapis'])==true){
+    $Login = ($_POST['imie']);
+    $Haslo = ($_POST['haslo']);
+    $sql = "INSERT INTO `user` (`id`, `Login`, `Haslo`)
+        VALUES (NULL, '$Login', '$Haslo')";
+if($result = $conn -> query($sql)) echo "Dodano nowe konto!";
+}
+$conn -> close();
+?>
+
