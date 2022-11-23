@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+    <head>
+        <title>PAI</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script type="text/javascript">
+
+            var wysokosc = parseInt(prompt("Podaj wysokosc"));
+            var szerokosc = parseInt(prompt("Podaj szerokosc"));
+
+            document.write("<hr>"+"zadanie 2:")
+            
+            document.write("<br>")
+            for(x=0;x<wysokosc;++x){
+                for(y=1;y<szerokosc;++y){
+                    document.write("*"+" ")
+                }
+                document.write("*"+"<br>");
+            }
+
+            document.write("<hr>"+"zadanie 3:")
+
+            var wartosc1 = parseInt(prompt("Podaj wartosc1"));
+            var wartosc2 = parseInt(prompt("Podaj wartosc2"));
+
+            function fun(a,b){
+                wynik=a*b;
+                document.write(wynik);
+            }
+            document.write("<br>")
+            fun(wartosc1,wartosc2);
+
+            document.write("<hr>"+"zadanie 4:")
+            document.write("<br>")
+            if (confirm("Jeżeli chcesz wyświetlić prostokąt z gwiazdek, kliknij OK, jeżeli wciśniesz Anuluj dostaniesz linię poziomą z gwiazdek")) {
+            alert("Wybrano opcję: OK");
+            var wysokosc1 = parseInt(prompt("Podaj wysokosc"));
+            var szerokosc1 = parseInt(prompt("Podaj szerokosc"));
+            for(x=0;x<wysokosc1;++x){
+                for(y=1;y<szerokosc1;++y){
+                    document.write("*"+" ")
+                }
+                document.write("*"+"<br>");
+            }
+            } else {
+            alert("Wybrano opcję: Anuluj");
+            var wysokosc2 = parseInt(prompt("Podaj wysokosc"));
+            for(x=0;x<wysokosc2;++x){
+                document.write("*");
+            }
+            } 
+            
+        </script>
+    </body>
+</html>
